@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url('app_home') }}">EXAM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clients</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ url('app_home') }}">All Clients</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Add Client</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Invoice</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ url('app_invoice') }}">All Invoice</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Add Invoice</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accountant</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ url('app_user') }}">All Accountant</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Add Accountant</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+{% endblock body %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/bootstrap.min.css') }}"/>
+    {% block extraCSS %}{% endblock extraCSS %}
+{% endblock stylesheets %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    {% block extraJS %}
+    {% endblock extraJS %}
+{% endblock javascripts %}

@@ -1,0 +1,23 @@
+{% extends 'site.html.twig' %}
+
+{% block title %}Invoice{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for invoice in invoices %}
+            <div class="col-lg-3">
+                <div class="card border-success mb-3" style="max-width: 20rem;">
+                    <div class="card-header">{{ invoice.status.value }}</div>
+                    <div class="card-body">
+                        <h4 class="card-title">date : {{ invoice.date | date }}</h4>
+                        <p class="card-text">amount : {{ invoice.amount }}</p>
+                        <p class="card-text">amount total : {{ invoice.totalAmount }}</p>
+                        <p class="card-text">payment date : {{ invoice.paymentDate | date }}</p>
+                        <p class="card-text">payment methode : {{ invoice.paymentMethod.value }}</p>
+                        <p class="card-text">description : {{ invoice.description }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
